@@ -1,0 +1,92 @@
+experiment:
+  name: bnci_classical_fairness_full
+  bundle_version: pra_mi_classical_fairness_v1
+  qri_version: qri_not_used_by_classical
+  frozen: true
+  eval_subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_audit_after_train: true
+  methods:
+    - name: csp_logreg_fixed
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_logreg
+      qri_version: not_used
+      n_components: 6
+      c: 1.0
+    - name: csp_logreg_tuned
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_logreg
+      qri_version: not_used
+      source_validation_tune: true
+      n_components_grid: [2, 4, 6, 8]
+      c_grid: [0.1, 1.0, 10.0]
+    - name: csp_svm_fixed
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_svm
+      qri_version: not_used
+      n_components: 6
+      c: 1.0
+    - name: csp_svm_tuned
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_svm
+      qri_version: not_used
+      source_validation_tune: true
+      n_components_grid: [2, 4, 6, 8]
+      c_grid: [0.1, 1.0, 10.0]
+    - name: riemann_mdm_fixed
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_mdm
+      qri_version: not_used
+      cov_estimator: oas
+      mdm_metric: riemann
+    - name: riemann_mdm_tuned
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_mdm
+      qri_version: not_used
+      source_validation_tune: true
+      cov_estimator_grid: [oas, lwf, scm]
+      mdm_metric_grid: [riemann, logeuclid]
+    - name: riemann_tangent_lr_fixed
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_tangent_lr
+      qri_version: not_used
+      cov_estimator: oas
+      c: 1.0
+    - name: riemann_tangent_lr_tuned
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_tangent_lr
+      qri_version: not_used
+      source_validation_tune: true
+      cov_estimator_grid: [oas, lwf, scm]
+      c_grid: [0.1, 1.0, 10.0]

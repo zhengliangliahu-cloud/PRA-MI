@@ -1,0 +1,19 @@
+dataset:
+  name: lee2019_mi
+  backend: moabb
+  moabb_id: Lee2019_MI
+  n_subjects: 54
+  subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54]
+  classes:
+    left_hand: 0
+    right_hand: 1
+  sfreq: 128
+  fmin: 8.0
+  fmax: 32.0
+  baseline_window_s: [0.0, 0.5]
+  mi_window_s: [0.5, 4.0]
+  cache_dir: datasets/moabb
+  harmonization_notes:
+    - "Lee2019_MI is loaded through MOABB LeftRightImagery with left-vs-right trials only."
+    - "The 0.0-0.5 s baseline is an early-trial local reference used for protocol consistency across external validation."
+    - "Lee2019_MI serves as an external validation dataset after freezing the BNCI-tuned QRI/QCA v1 bundle."

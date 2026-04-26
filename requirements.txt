@@ -1,0 +1,17 @@
+setuptools<76
+packaging>=24
+torch
+lightning
+hydra-core
+omegaconf
+moabb
+mne
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+openpyxl
+tqdm
+pytest

@@ -1,0 +1,13 @@
+protocol:
+  name: pra_mi
+  tiers:
+    P0:
+      description: "source-only cold-start LOSO"
+      allow_target_aggregate: false
+      allowed_method_availability: ["D0a", "D0b"]
+    P1:
+      description: "unlabeled target-stat LOSO"
+      allow_target_aggregate: true
+      allowed_method_availability: ["D0a", "D0b", "D1"]
+  availability_classes: ["D0a", "D0b", "D0c", "D1", "D2", "D3"]
+

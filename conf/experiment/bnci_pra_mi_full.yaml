@@ -1,0 +1,29 @@
+experiment:
+  name: bnci_pra_mi_full
+  eval_subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_audit_after_train: true
+  methods:
+    - name: p0_source
+      protocol_tier: P0
+      preprocessing: source_zscore
+      adapter: none
+    - name: p0_baseline_norm
+      protocol_tier: P0
+      preprocessing: baseline_source_zscore
+      adapter: none
+    - name: p0_baseline_robust
+      protocol_tier: P0
+      preprocessing: baseline_source_robust_zscore
+      adapter: none
+    - name: p1_target_stat
+      protocol_tier: P1
+      preprocessing: target_stat_zscore
+      adapter: none
+    - name: qca_minimal
+      protocol_tier: P0
+      preprocessing: qca_reliability_norm
+      adapter: qca_minimal
+    - name: qca_enhanced
+      protocol_tier: P0
+      preprocessing: qca_reliability_robust_norm
+      adapter: qca_enhanced

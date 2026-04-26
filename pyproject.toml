@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pra-mi"
+version = "0.1.0"
+description = "Hydra/Lightning framework for PRA-MI residual audit and QCA-MI pilot experiments."
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]

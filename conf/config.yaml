@@ -1,0 +1,14 @@
+defaults:
+  - dataset: bnci2014_001
+  - protocol: pra_mi
+  - model: eegnet_lite
+  - trainer: gpu_smoke
+  - experiment: bnci_pra_mi_smoke
+  - _self_
+
+project_name: PRA-MI
+seed: 2026
+output_root: results
+data_root: datasets/moabb
+eval_subjects: null
+subjects: null

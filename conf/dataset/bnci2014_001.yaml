@@ -1,0 +1,20 @@
+dataset:
+  name: bnci2014_001
+  backend: moabb
+  moabb_id: BNCI2014_001
+  n_subjects: 9
+  subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  classes:
+    left_hand: 0
+    right_hand: 1
+  sfreq: 128
+  fmin: 4.0
+  fmax: 45.0
+  baseline_window_s: [0.0, 2.0]
+  mi_window_s: [2.0, 6.0]
+  cache_dir: datasets/moabb
+  harmonization_notes:
+    - "BNCI2014_001 is BCI Competition IV dataset 2a in MOABB/BNCI naming."
+    - "Left-vs-right subset only; feet/tongue are excluded."
+    - "BNCI has only 9 subjects, so residual stability must be reported as pilot evidence."
+

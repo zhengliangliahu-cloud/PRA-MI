@@ -1,0 +1,17 @@
+dataset:
+  name: synthetic
+  backend: synthetic
+  n_subjects: 4
+  subjects: [1, 2, 3, 4]
+  n_trials_per_subject: 32
+  n_channels: 8
+  n_times: 256
+  sfreq: 64
+  baseline_window_s: [0.0, 1.0]
+  mi_window_s: [1.0, 4.0]
+  classes:
+    left_hand: 0
+    right_hand: 1
+  harmonization_notes:
+    - "Synthetic smoke data for CI and protocol tests only."
+

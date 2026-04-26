@@ -1,0 +1,28 @@
+name: AEC
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - wheel
+  - "setuptools<76"
+  - "packaging>=24"
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  - "mkl<2025"
+  - "intel-openmp<2025"
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - openpyxl
+  - tqdm
+  - pytest
+  - mne
+  - pip:
+      - -r requirements-aec.txt

@@ -1,0 +1,37 @@
+experiment:
+  name: lee2019_pra_mi_full
+  bundle_version: pra_mi_qca_v1_frozen
+  qri_version: qri_p0_safe_source_ref_v1
+  frozen: true
+  eval_subjects: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,
+    14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26,
+    27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52,
+    53, 54
+  ]
+  run_audit_after_train: true
+  methods:
+    - name: p0_baseline_robust
+      protocol_tier: P0
+      preprocessing: baseline_source_robust_zscore
+      adapter: none
+      adapter_version: none
+    - name: p1_target_stat
+      protocol_tier: P1
+      preprocessing: target_stat_zscore
+      adapter: none
+      adapter_version: none
+    - name: qca_enhanced
+      protocol_tier: P0
+      preprocessing: qca_reliability_robust_norm
+      adapter: qca_enhanced
+      adapter_version: qca_enhanced_v1
+    - name: riemann_tangent_lr
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_tangent_lr
+      qri_version: not_used

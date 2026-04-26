@@ -1,0 +1,53 @@
+experiment:
+  name: bnci_pra_mi_qca_failure_full
+  bundle_version: pra_mi_qca_v1_frozen
+  qri_version: qri_p0_safe_source_ref_v1
+  frozen: true
+  eval_subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_audit_after_train: true
+  methods:
+    - name: p0_baseline_robust
+      protocol_tier: P0
+      preprocessing: baseline_source_robust_zscore
+      adapter: none
+      adapter_version: none
+    - name: qca_enhanced
+      protocol_tier: P0
+      preprocessing: qca_reliability_robust_norm
+      adapter: qca_enhanced
+      adapter_version: qca_enhanced_v1
+    - name: qca_adapter_only
+      protocol_tier: P0
+      preprocessing: qca_adapter_only_robust_zscore
+      adapter: qca_adapter_only
+      adapter_version: qca_enhanced_v1
+    - name: qca_norm_only
+      protocol_tier: P0
+      preprocessing: qca_norm_only_robust_norm
+      adapter: none
+      adapter_version: none
+    - name: qca_shuffle_adapter_only
+      protocol_tier: P0
+      preprocessing: qca_shuffle_adapter_only_robust_norm
+      adapter: qca_shuffle_adapter_only
+      adapter_version: qca_enhanced_v1
+    - name: qca_shuffle_norm_only
+      protocol_tier: P0
+      preprocessing: qca_shuffle_norm_only_robust_norm
+      adapter: qca_shuffle_norm_only
+      adapter_version: qca_enhanced_v1
+    - name: qca_shuffled_reliability
+      protocol_tier: P0
+      preprocessing: qca_shuffled_reliability_robust_norm
+      adapter: qca_shuffled_reliability
+      adapter_version: qca_enhanced_v1
+    - name: qca_random_reliability
+      protocol_tier: P0
+      preprocessing: qca_random_reliability_robust_norm
+      adapter: qca_random_reliability
+      adapter_version: qca_enhanced_v1
+    - name: generic_film
+      protocol_tier: P0
+      preprocessing: generic_film_robust_zscore
+      adapter: generic_film
+      adapter_version: qca_enhanced_v1

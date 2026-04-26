@@ -1,0 +1,55 @@
+experiment:
+  name: bnci_pra_mi_frozen_full
+  bundle_version: pra_mi_qca_v1_frozen
+  qri_version: qri_p0_safe_source_ref_v1
+  frozen: true
+  eval_subjects: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_audit_after_train: true
+  methods:
+    - name: p0_baseline_robust
+      protocol_tier: P0
+      preprocessing: baseline_source_robust_zscore
+      adapter: none
+      adapter_version: none
+    - name: p1_target_stat
+      protocol_tier: P1
+      preprocessing: target_stat_zscore
+      adapter: none
+      adapter_version: none
+    - name: qca_enhanced
+      protocol_tier: P0
+      preprocessing: qca_reliability_robust_norm
+      adapter: qca_enhanced
+      adapter_version: qca_enhanced_v1
+    - name: csp_logreg
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_logreg
+      qri_version: not_used
+    - name: csp_svm
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: csp_svm
+      qri_version: not_used
+    - name: riemann_mdm
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_mdm
+      qri_version: not_used
+    - name: riemann_tangent_lr
+      protocol_tier: P0
+      preprocessing: baseline_only
+      adapter: none
+      adapter_version: none
+      engine: classical
+      baseline: riemann_tangent_lr
+      qri_version: not_used

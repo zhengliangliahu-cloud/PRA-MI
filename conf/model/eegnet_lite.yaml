@@ -1,0 +1,15 @@
+model:
+  name: eegnet_lite
+  version: eegnet_lite_v1_frozen
+  backbone: eegnet_lite
+  n_temporal_filters: 8
+  depth_multiplier: 2
+  separable_filters: 16
+  kernel_length: 32
+  dropout: 0.25
+  adapter:
+    enabled: false
+    alpha: 0.12
+    feature_alpha: 0.08
+    hidden_dim: 32
+    global_feature_dim: 7

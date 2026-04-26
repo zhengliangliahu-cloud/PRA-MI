@@ -1,0 +1,38 @@
+experiment:
+  name: bnci_pra_mi_ablation_smoke
+  bundle_version: pra_mi_qca_v1_frozen
+  qri_version: qri_p0_safe_source_ref_v1
+  frozen: true
+  eval_subjects: [1, 2]
+  run_audit_after_train: true
+  methods:
+    - name: p0_baseline_robust
+      protocol_tier: P0
+      preprocessing: baseline_source_robust_zscore
+      adapter: none
+      adapter_version: none
+    - name: qca_enhanced
+      protocol_tier: P0
+      preprocessing: qca_reliability_robust_norm
+      adapter: qca_enhanced
+      adapter_version: qca_enhanced_v1
+    - name: qca_d0b_local_only
+      protocol_tier: P0
+      preprocessing: qca_local_only_robust_norm
+      adapter: qca_d0b_local_only
+      adapter_version: qca_enhanced_v1
+    - name: qca_d0a_source_ref_only
+      protocol_tier: P0
+      preprocessing: qca_source_only_robust_norm
+      adapter: qca_d0a_source_ref_only
+      adapter_version: qca_enhanced_v1
+    - name: qca_random_reliability
+      protocol_tier: P0
+      preprocessing: qca_random_reliability_robust_norm
+      adapter: qca_random_reliability
+      adapter_version: qca_enhanced_v1
+    - name: qca_shuffled_reliability
+      protocol_tier: P0
+      preprocessing: qca_shuffled_reliability_robust_norm
+      adapter: qca_shuffled_reliability
+      adapter_version: qca_enhanced_v1
